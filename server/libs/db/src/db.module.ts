@@ -2,6 +2,8 @@ import { Module, Global } from '@nestjs/common';
 import { DbService } from './db.service';
 import { TypegooseModule } from 'nestjs-typegoose'
 import { User } from './models/user.model';
+import { Dictionary } from './Models/dictionary.model';
+import { Vocabulary } from './models/vocabulary.model';
 
 const dbURL = 'mongodb://118.24.152.253/parrot'
 const options = {
@@ -13,7 +15,9 @@ const options = {
 
 //导入所有数据库模型再导出，其他地方就可以使用
 const models = TypegooseModule.forFeature([
-  User
+  User,
+  Dictionary,
+  Vocabulary
 ])
 
 @Global()//标记为全局

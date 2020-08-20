@@ -3,11 +3,15 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { DbModule } from '@libs/db';
+import { DictionarysModule } from './dictionarys/dictionarys.module';
+import { VocabularysModule } from './vocabularys/vocabularys.module';
 
 @Module({
   imports: [
     DbModule,
-    UsersModule
+    UsersModule,
+    DictionarysModule,
+    VocabularysModule
   ],
   controllers: [AppController],
   providers: [AppService],
