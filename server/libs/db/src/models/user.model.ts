@@ -1,8 +1,11 @@
 import { Prop, ModelOptions } from '@typegoose/typegoose'
 import { ApiProperty } from '@nestjs/swagger'
 
+//定义这个模型的其他属性
 @ModelOptions({
+    //等同于在mongoose需要定义的参数
     schemaOptions: {
+        //自动加上创建和更新时间
         timestamps: true
     }
 })
