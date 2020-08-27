@@ -1,0 +1,10 @@
+[
+  {
+    "prop": "username",
+    "label": "用户名"
+  },
+  {
+    "prop": "password",
+    "label": "密码"
+  }
+]

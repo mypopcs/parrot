@@ -1,0 +1,40 @@
+{
+    "items": [
+        {
+            "title": "首页",
+            "path": "/",
+            "items": [
+                {
+                    "title": "首页",
+                    "path": "/"
+                }
+            ]
+        },
+        {
+            "title": "单词管理",
+            "items": [
+                {
+                    "title": "词典管理",
+                    "path": "/dictionarys/list"
+                },
+                {
+                    "title": "词汇管理",
+                    "path": "/vocabularys/list"
+                }
+            ]
+        },
+        {
+            "title": "运营管理",
+            "items": [
+                {
+                    "title": "用户管理",
+                    "path": "/users/list"
+                },
+                {
+                    "title": "会员管理",
+                    "path": "/users/vip"
+                }
+            ]
+        }
+    ]
+}
