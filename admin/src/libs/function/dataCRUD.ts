@@ -15,7 +15,18 @@ export async function fetchData(that: any, name: string){
         const res = await that.$http.get(name)
         return that.data = res.data
     } catch (e) {
-        that.$message.error('获取失败' + e);
+        that.$message.error('获取数据失败' + e);
+    }
+}
+
+//调用公共fetch获取option
+export async function fetchOption(that: any, name: string){
+    const link = name + '/option'
+    try {
+        const res = await that.$http.get(link)
+        return that.option = res.data
+    } catch (e) {
+        that.$message.error('获取配置失败' + e);
     }
 }
 

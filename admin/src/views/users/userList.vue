@@ -1,7 +1,7 @@
 <template>
   <div>
       <avue-crud
-        title="66666"
+        v-if="option.column"
         :option="option"
         :data="data.data"
         @row-save="create"
@@ -13,10 +13,8 @@
 
 <script lang="ts">
 import { Vue, Component} from 'vue-property-decorator'
-import {removeRow, createData, fetchData, updateData } from '../../libs/function/dataCRUD'
+import {removeRow, createData, fetchData, fetchOption, updateData } from '../../libs/function/dataCRUD'
 
-const column = require('../../libs/option/userList')
-const tableOptions = require('../../libs/option/table')
 
 //数据库增删改查用到的路径关键字
 const name = 'users'
@@ -26,18 +24,8 @@ export default class UserList extends Vue {
   //定义数据
   data = {};
 
-  option = {
-    column: column,
-    border: tableOptions.border,
-    stripe: tableOptions.stripe,
-    showHeader: tableOptions.showHeader,
-    index: tableOptions.index,
-    selection: tableOptions.selection,
-    page: tableOptions.page,
-    align: tableOptions.align,
-    menuAlign: tableOptions.menuAlign,
-    size: tableOptions.size
-  }
+  option = {};
+
   //创建
   async create(row: any, done: any, loading: any){
     await createData(this, row, name, done, loading)
@@ -52,7 +40,8 @@ export default class UserList extends Vue {
   }
   // 执行获取
   async created(){
-    await fetchData(this, name)
+    await fetchOption(this, name);
+    await fetchData(this, name);
   }
 }
 </script>

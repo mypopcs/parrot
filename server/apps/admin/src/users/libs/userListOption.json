@@ -1,0 +1,25 @@
+{
+  "column": [
+    {
+      "prop": "username",
+      "label": "用户名"
+    },
+    {
+      "prop": "password",
+      "label": "密码"
+    }
+  ],
+  "option": [
+    {
+      "border": true,
+      "stripe": true,
+      "showHeader": true,
+      "index": false,
+      "selection": true,
+      "page": false,
+      "align": "center",
+      "menuAlign": "center",
+      "size":"mini"
+    }
+  ]
+}

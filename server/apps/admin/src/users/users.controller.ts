@@ -1,8 +1,10 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import { InjectModel } from 'nestjs-typegoose';
 import { User } from '@libs/db/models/user.model';
 import { Crud } from 'nestjs-mongoose-crud';
 import { ApiTags} from '@nestjs/swagger'
+const userList = require('../users/libs/userListOption.json')
+const userListOption = userList.option
 
 //指定模型
 @Crud({
@@ -14,4 +16,12 @@ import { ApiTags} from '@nestjs/swagger'
 export class UsersController {
     //在constructor中引用模型，使用@InjectModel注入User模型到model属性
     constructor(@InjectModel(User) private readonly model){}
+
+    @Get('option')
+    option(){
+        return {
+            column: userList.column,
+            userListOption
+        }
+    }
 }
