@@ -32,7 +32,7 @@
                 },
                 {
                     "title": "会员管理",
-                    "path": "/users/vip"
+                    "path": "/vipusers/list"
                 }
             ]
         }

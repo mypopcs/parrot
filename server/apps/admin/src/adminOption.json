@@ -8,6 +8,30 @@
       {
         "prop": "password",
         "label": "密码"
+      },
+      {
+        "prop": "nicename",
+        "label": "昵称"
+      }
+    ]
+  },
+  "vipusers": {
+    "column": [
+      {
+        "prop": "username",
+        "label": "用户名"
+      },
+      {
+        "prop": "nicename",
+        "label": "昵称"
+      },
+      {
+        "prop": "vipstartdate",
+        "label": "VIP开始时间"
+      },
+      {
+        "prop": "vipenddate",
+        "label": "VIP结束时间"
       }
     ]
   },

@@ -5,13 +5,15 @@ import { UsersModule } from './users/users.module';
 import { DbModule } from '@libs/db';
 import { DictionarysModule } from './dictionarys/dictionarys.module';
 import { VocabularysModule } from './vocabularys/vocabularys.module';
+import { VipusersModule } from './vipusers/vipusers.module';
 
 @Module({
   imports: [
     DbModule,
     UsersModule,
     DictionarysModule,
-    VocabularysModule
+    VocabularysModule,
+    VipusersModule
   ],
   controllers: [AppController],
   providers: [AppService],

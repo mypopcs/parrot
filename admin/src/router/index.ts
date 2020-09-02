@@ -13,7 +13,7 @@ Vue.use(VueRouter)
     //子集
     children: [
       {name: 'home', path: '/', component: Home},
-      {name: 'user-list', path: '/:resource/list', component: resourceCrud, props: true},
+      {name: 'table-list', path: '/:resource/list', component: resourceCrud, props: true},
     ]
   },
 ]

@@ -18,4 +18,8 @@ export class User {
     @ApiProperty({description: '密码', example: 'pwd1234567'})
     @Prop()
     password: string
+
+    @ApiProperty({description: '昵称', example: '欧阳修'})
+    @Prop()
+    nickname: string
 }
