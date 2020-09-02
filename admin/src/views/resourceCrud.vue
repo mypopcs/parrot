@@ -19,7 +19,7 @@ import {removeRow, createData, fetchData, fetchOption, updateData } from '../lib
 @Component({})
 export default class ResourceList extends Vue {
   //路由传参,数据库增删改查用到的路径关键字
-  @Prop(String) resource:string = 'users'
+  @Prop(String) resource?:any
   
   //定义数据
   data = {};

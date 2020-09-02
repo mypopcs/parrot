@@ -3,8 +3,8 @@ import { InjectModel } from 'nestjs-typegoose';
 import { User } from '@libs/db/models/user.model';
 import { Crud } from 'nestjs-mongoose-crud';
 import { ApiTags} from '@nestjs/swagger'
-const userList = require('../users/libs/userListOption.json')
-const userListOption = userList.option
+const adminOption = require('../adminOption.json')
+const tableOption = adminOption.option
 
 //指定模型
 @Crud({
@@ -20,8 +20,8 @@ export class UsersController {
     @Get('option')
     option(){
         return {
-            column: userList.column,
-            userListOption
+            column: adminOption.users.column,
+            tableOption
         }
     }
 }

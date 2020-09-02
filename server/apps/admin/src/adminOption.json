@@ -1,0 +1,47 @@
+{
+  "users": {
+    "column": [
+      {
+        "prop": "username",
+        "label": "用户名"
+      },
+      {
+        "prop": "password",
+        "label": "密码"
+      }
+    ]
+  },
+  "dictionarys": {
+    "column": [
+      {
+        "prop": "name",
+        "label": "词典名"
+      }
+    ]
+  },
+  "vocabularys": {
+    "column": [
+      {
+        "prop": "enWord",
+        "label": "单词"
+      },
+      {
+        "prop": "zhWord",
+        "label": "词译"
+      }
+    ]
+  },
+  "option": [
+    {
+      "border": true,
+      "stripe": true,
+      "showHeader": true,
+      "index": false,
+      "selection": true,
+      "page": false,
+      "align": "center",
+      "menuAlign": "center",
+      "size":"mini"
+    }
+  ]
+}
