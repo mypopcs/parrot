@@ -6,7 +6,7 @@ import { Dictionary } from './Models/dictionary.model';
 import { Vocabulary } from './models/vocabulary.model';
 import { VipUser} from './models/vipuser.model';
 
-const dbURL = 'mongodb://118.24.152.253/parrot'
+const dbURL = process.env.DB_URL
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
