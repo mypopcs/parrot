@@ -4,16 +4,18 @@
         v-if="option.column"
         :option="option"
         :data="data.data"
+        :page.sync="page"
         @row-save="create"
         @row-del="remove"
         @row-update="update"
+        @on-load="changePage"
       ></avue-crud>
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component, Prop} from 'vue-property-decorator'
-import {removeRow, createData, fetchData, fetchOption, updateData } from '../libs/function/dataCRUD'
+import {removeRow, createData, fetchData, fetchOption, updateData, pageConfig } from '../libs/function/dataCRUD'
 
 // const this.resource = '';
 @Component({})
@@ -25,6 +27,15 @@ export default class ResourceList extends Vue {
   data = {};
 
   option = {};
+  
+  page = {
+    pageSize: 2,
+    pageSizes: [2, 5, 10],
+    total: 0
+  };
+  query ={
+    limit: 2
+  }
 
   //创建
   async create(row: any, done: any, loading: any){
@@ -42,7 +53,12 @@ export default class ResourceList extends Vue {
   async created(){
     console.log(this.resource)
     await fetchOption(this, this.resource);
-    await fetchData(this, this.resource);
+    await fetchData(this, this.resource, this.query);
+  }
+  // 获取分页配置
+  async changePage(){
+    await pageConfig(this, this.page);
+    await fetchData(this, this.resource, this.query);
   }
 }
 </script>

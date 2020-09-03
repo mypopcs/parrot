@@ -10,13 +10,26 @@ export function dataTreat(rowData: any):any {
 }
 
 //调用公共fetch获取数据
-export async function fetchData(that: any, name: string){
+export async function fetchData(that: any, name: string, pageQuery?: any){
     try {
-        const res = await that.$http.get(name)
-        return that.data = res.data
+        const res = await that.$http.get(name,{
+            params: {
+                query: pageQuery
+            }
+        })
+        that.page.total = res.data.total
+        that.data = res.data
+        return that.page.total, that.data
     } catch (e) {
         that.$message.error('获取数据失败' + e);
     }
+}
+
+//切换页数
+export async function pageConfig(that:any, page: any){
+    that.query.page = page.currentPage
+    that.query.limit = page.pageSize
+    return page.currentPage, page.pageSize
 }
 
 //调用公共fetch获取option
