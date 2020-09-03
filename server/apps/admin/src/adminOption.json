@@ -4,7 +4,9 @@
       {
         "prop": "username",
         "label": "用户名",
-        "sortable": true
+        "sortable": true,
+        "search": true,
+        "regex": true
       },
       {
         "prop": "password",
@@ -13,7 +15,9 @@
       {
         "prop": "nicename",
         "label": "昵称",
-        "sortable": true
+        "sortable": true,
+        "search": true,
+        "regex": true
       }
     ]
   },
@@ -22,12 +26,16 @@
       {
         "prop": "username",
         "label": "用户名",
-        "sortable": true
+        "sortable": true,
+        "search": true,
+        "regex": true
       },
       {
         "prop": "nicename",
         "label": "昵称",
-        "sortable": true
+        "sortable": true,
+        "search": true,
+        "regex": true
       },
       {
         "prop": "vipstartdate",
@@ -46,7 +54,9 @@
       {
         "prop": "name",
         "label": "词典名",
-        "sortable": true
+        "sortable": true,
+        "search": true,
+        "regex": true
       }
     ]
   },
@@ -55,16 +65,21 @@
       {
         "prop": "enWord",
         "label": "单词",
-        "sortable": true
+        "sortable": true,
+        "search": true,
+        "regex": true
       },
       {
         "prop": "zhWord",
-        "label": "词译"
+        "label": "词译",
+        "search": true,
+        "regex": true
       }
     ]
   },
   "option": [
     {
+      "searchMenuSpan": 8,
       "defaultSort":{
         "prop": "name",
         "order": "descending"

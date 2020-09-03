@@ -44,6 +44,22 @@ export async function sortConfig(that:any, srotValue: any){
         }
     }
 }
+//搜索
+export async function searchValue(that: any, searchVal: any, done: any){
+    try {
+        //模糊查询
+        for(const k in searchVal){
+            const field = that.option.column.find((v: { prop: string }) => v.prop === k)
+            if (field.regex){
+                searchVal[k] = {$regex: searchVal[k]}
+            }
+        }
+        that.query.where = searchVal
+    } catch (e) {
+        that.$message.error('搜索失败' + e);
+    }
+    done()
+}
 
 //调用公共fetch获取option
 export async function fetchOption(that: any, name: string){

@@ -10,13 +10,14 @@
         @row-update="update"
         @on-load="changePage"
         @sort-change="changeSort"
+        @search-change="changeSearch"
       ></avue-crud>
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component, Prop} from 'vue-property-decorator'
-import {removeRow, createData, fetchData, fetchOption, updateData, pageConfig, sortConfig } from '../libs/function/dataCRUD'
+import {removeRow, createData, fetchData, fetchOption, updateData, pageConfig, sortConfig, searchValue } from '../libs/function/dataCRUD'
 
 // const this.resource = '';
 @Component({})
@@ -67,6 +68,11 @@ export default class ResourceList extends Vue {
   async changeSort(val: any){
     // console.log(val)
     await sortConfig(this, val);
+    await fetchData(this, this.resource, this.query);
+  }
+  //搜索
+  async changeSearch(where: String, done: any){
+    await searchValue(this, where, done);
     await fetchData(this, this.resource, this.query);
   }
 }
