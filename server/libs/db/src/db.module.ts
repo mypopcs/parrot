@@ -6,7 +6,6 @@ import { Dictionary } from './Models/dictionary.model';
 import { Vocabulary } from './models/vocabulary.model';
 import { VipUser} from './models/vipuser.model';
 
-const dbURL = process.env.DB_URL
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -26,9 +25,19 @@ const models = TypegooseModule.forFeature([
 
 @Module({
   imports: [
-    //forRoot方法连接数据库
-    TypegooseModule.forRoot(dbURL,options),
+    //异步加载，放置和ConfigModule同时加载
+    TypegooseModule.forRootAsync({
+      useFactory(){
+        return {
+          uri: process.env.DB_URL,
+          options
+        }
+      }
+    }),
     models,
+    //forRoot方法连接数据库
+    // TypegooseModule.forRoot(dbURL,options),
+    
   ],
   providers: [DbService],
   exports: [DbService, models],

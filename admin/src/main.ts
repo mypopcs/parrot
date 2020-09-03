@@ -11,7 +11,7 @@ Vue.config.productionTip = false
 
 //axios方法获取数据
 Vue.prototype.$http = axios.create({
-  baseURL: 'http://localhost:3000'
+  baseURL: process.env.VUE_APP_API_URL
 })
 
 new Vue({
