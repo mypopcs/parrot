@@ -9,13 +9,14 @@
         @row-del="remove"
         @row-update="update"
         @on-load="changePage"
+        @sort-change="changeSort"
       ></avue-crud>
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component, Prop} from 'vue-property-decorator'
-import {removeRow, createData, fetchData, fetchOption, updateData, pageConfig } from '../libs/function/dataCRUD'
+import {removeRow, createData, fetchData, fetchOption, updateData, pageConfig, sortConfig } from '../libs/function/dataCRUD'
 
 // const this.resource = '';
 @Component({})
@@ -29,14 +30,16 @@ export default class ResourceList extends Vue {
   option = {};
   
   page = {
-    pageSize: 2,
-    pageSizes: [2, 5, 10],
+    pageSize: 10,
+    pageSizes: [10, 30, 50, 100],
     total: 0
   };
   query ={
-    limit: 2
+    limit: 10
   }
-
+  shrot = {
+    
+  }
   //创建
   async create(row: any, done: any, loading: any){
     await createData(this, row, this.resource, done, loading)
@@ -58,6 +61,12 @@ export default class ResourceList extends Vue {
   // 获取分页配置
   async changePage(){
     await pageConfig(this, this.page);
+    await fetchData(this, this.resource, this.query);
+  }
+  //排序
+  async changeSort(val: any){
+    // console.log(val)
+    await sortConfig(this, val);
     await fetchData(this, this.resource, this.query);
   }
 }

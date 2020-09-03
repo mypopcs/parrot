@@ -3,7 +3,8 @@
     "column": [
       {
         "prop": "username",
-        "label": "用户名"
+        "label": "用户名",
+        "sortable": true
       },
       {
         "prop": "password",
@@ -11,7 +12,8 @@
       },
       {
         "prop": "nicename",
-        "label": "昵称"
+        "label": "昵称",
+        "sortable": true
       }
     ]
   },
@@ -19,19 +21,23 @@
     "column": [
       {
         "prop": "username",
-        "label": "用户名"
+        "label": "用户名",
+        "sortable": true
       },
       {
         "prop": "nicename",
-        "label": "昵称"
+        "label": "昵称",
+        "sortable": true
       },
       {
         "prop": "vipstartdate",
-        "label": "VIP开始时间"
+        "label": "VIP开始时间",
+        "sortable": true
       },
       {
         "prop": "vipenddate",
-        "label": "VIP结束时间"
+        "label": "VIP结束时间",
+        "sortable": true
       }
     ]
   },
@@ -39,7 +45,8 @@
     "column": [
       {
         "prop": "name",
-        "label": "词典名"
+        "label": "词典名",
+        "sortable": true
       }
     ]
   },
@@ -47,7 +54,8 @@
     "column": [
       {
         "prop": "enWord",
-        "label": "单词"
+        "label": "单词",
+        "sortable": true
       },
       {
         "prop": "zhWord",
@@ -57,6 +65,10 @@
   },
   "option": [
     {
+      "defaultSort":{
+        "prop": "name",
+        "order": "descending"
+      },
       "border": true,
       "stripe": true,
       "showHeader": true,

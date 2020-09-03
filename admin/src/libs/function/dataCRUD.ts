@@ -31,6 +31,19 @@ export async function pageConfig(that:any, page: any){
     that.query.limit = page.pageSize
     return page.currentPage, page.pageSize
 }
+// 排序
+export async function sortConfig(that:any, srotValue: any){
+    // console.log(shrotValue)
+    const order = srotValue.order
+    const prop = srotValue.prop
+    if(!order){
+        that.query.short = null
+    } else {
+        that.query.short = {
+            [prop]: order === 'ascending' ? 1 : -1
+        }
+    }
+}
 
 //调用公共fetch获取option
 export async function fetchOption(that: any, name: string){
