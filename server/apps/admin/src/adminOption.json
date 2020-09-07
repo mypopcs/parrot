@@ -63,6 +63,12 @@
   "vocabularys": {
     "column": [
       {
+        "prop": "dictionary",
+        "label": "所属词典",
+        "type": "select",
+        "row": true
+      },
+      {
         "prop": "enWord",
         "label": "单词",
         "sortable": true,
