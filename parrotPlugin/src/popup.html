@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Parrot</title>
+    <script src="../public/js/jquery.slim.min.js"></script>
+    <script src="../public/js/popper.min.js"></script>
+    <script src="../public/js/bootstrap.min.js"></script>
+    <script src='../public/js/i18n.js'></script>
+    <link rel='stylesheet' href='../public/css/bootstrap.min.css' type='text/css'/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel='stylesheet' href='../public/css/main.css' type='text/css'/>
+</head>
+<body>
+    <div id="header" class="container-fluid mb-3">
+        <div class="row navbar navbar-dark bg-dark">
+            <div class="col-8">
+                <h1>__MSG_appName__</h1>
+            </div>
+            <div class="col-4">
+                <ul id="menu-list" class="nav float-right">
+                    <li class="nav-item">
+                        <a id="icon-settings" class="nav-link" href="" target="_blank" title="搜索">
+                            <i class="material-icons">search</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="icon-settings" class="nav-link" href="" target="_blank" title="设置">
+                            <i class="material-icons">settings</i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="content" class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                      <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">__MSG_sysSetting__</button>
+                        </h2>
+                      </div>
+                      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">__MSG_SysSettingText__</div>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">__MSG_docSetting__</button>
+                        </h2>
+                      </div>
+                      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">__MSG_SysSettingText__</div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div id="copyright" class="container-fluid card-footer mt-3">
+        <div class="row navbar">
+            <div class="col-8">
+                <p class="version text-black-50">__MSG_vesionTitle__<span class="text-bold version">0.0.1</span><span>__MSG_versionNewest__</span></p>
+            </div>
+            <div class="col-4">
+                <p class="text-right float-right text-black-50">Powered by <a href="https://www.parrot.com">Parrot</a><p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
