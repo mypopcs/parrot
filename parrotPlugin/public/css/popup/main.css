@@ -1,0 +1,35 @@
+body{
+    min-width: 480px;
+    background-color:#f4f6f9;
+}
+#header .navbar{
+    padding: .5rem 0;
+}
+.card-footer .navbar{
+    font-size:.8rem;
+    padding:0 1rem;
+}
+.navbar h1{
+    font-size:1.3rem;
+    color: #fff;
+    margin-bottom: 0;
+}
+.nav-item:last-child .nav-link{
+    padding-right: 0;
+}
+.nav-link{
+    vertical-align: middle;
+}
+.card-footer p{
+    margin-bottom: 0;
+}
+.text-bold{
+    font-weight: 600;
+}
+.card-footer {
+    padding-left: 0;
+    padding-right: 0;
+}
+.card-footer .version {
+    margin-right: 8px;
+}
